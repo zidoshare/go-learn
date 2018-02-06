@@ -4,14 +4,14 @@ import (
 	"fmt"
 )
 
-func main(){
+func main() {
 	var array [2]string
 	array[0] = "dw"
 	array[1] = "dwfef"
 
 	fmt.Println(array)
 
-	p := []int{1,2,4,6,8}
+	p := []int{1, 2, 4, 6, 8}
 	fmt.Println(p)
 	for i := 0; i < len(p); i++ {
 		fmt.Printf("p[%d] == %d\n", i, p[i])
@@ -44,15 +44,15 @@ func main(){
 
 		注：cap函数返回分配的空间大小
 	*/
-	a:=make([]int,5)
-	printSlice("a",a)
-	b:=make([]int , 0, 5)
-	printSlice("b",b)
+	a := make([]int, 5)
+	printSlice("a", a)
+	b := make([]int, 0, 5)
+	printSlice("b", b)
 	c := b[:2]
-	printSlice("c",c)
+	printSlice("c", c)
 
-	d:= c[2:5]
-	printSlice("d",d)
+	d := c[2:5]
+	printSlice("d", d)
 
 	/*
 		slice 的零值是 `nil`。
@@ -67,7 +67,7 @@ func main(){
 
 	/**
 	向 slice 添加元素是一种常见的操作，因此 Go 提供了一个内建函数 `append`。 内建函数的文档对 append 有详细介绍。
-	
+
 	append 的第一个参数 s 是一个类型为 T 的数组，其余类型为 T 的值将会添加到 slice。
 
 	append 的结果是一个包含原 slice 所有元素加上新添加的元素的 slice。
@@ -90,10 +90,9 @@ func main(){
 	printSlice("f", f)
 
 	//for 循环的 range 格式可以对 slice 或者 map 进行迭代循环。
-	for i , v := range f {
-		println("2 ** %d = %d",i, v)
+	for i, v := range f {
+		println("2 ** %d = %d", i, v)
 	}
-
 
 	/**
 	可以通过赋值给 _ 来忽略序号和值。
@@ -109,6 +108,6 @@ func main(){
 	}
 }
 
-func printSlice(s string,x []int){
-	fmt.Printf("%s len=%d cap=%d %v\n",s,len(x),cap(x),x)
+func printSlice(s string, x []int) {
+	fmt.Printf("%s len=%d cap=%d %v\n", s, len(x), cap(x), x)
 }

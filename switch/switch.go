@@ -5,12 +5,12 @@ import (
 	"runtime"
 )
 
-func main(){
+func main() {
 	/*
-	一个结构体（`struct`）就是一个字段的集合。
+		一个结构体（`struct`）就是一个字段的集合。
 
-除非以 fallthrough 语句结束，否则分支会自动终止。
-*/
+	除非以 fallthrough 语句结束，否则分支会自动终止。
+	*/
 	fmt.Println("go runs on")
 	switch os := runtime.GOOS; os {
 	case "darwin":
@@ -18,6 +18,6 @@ func main(){
 	case "linux":
 		fmt.Println("Linux.")
 	default:
-		fmt.Printf("%s.",os)
+		fmt.Printf("%s.", os)
 	}
 }
